@@ -1,45 +1,60 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Star, Tag, Users } from "lucide-react";
+import { Star, ShieldCheck, Building2 } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { FLOATING_CARDS } from "@/data/hero";
+import { STATS } from "@/data/hero";
 
 const iconMap = {
   star: Star,
-  discount: Tag,
-  users: Users,
+  shield: ShieldCheck,
+  building: Building2,
 };
 
-const positionStyles = {
-  "top-right": "top-8 right-8",
-  "bottom-left": "bottom-8 left-8",
-  "bottom-right": "bottom-8 right-8",
-};
+const positions = [
+  "top-24 right-6",
+  "bottom-36 left-6",
+  "bottom-36 right-6",
+] as const;
+
+const delays = [0.9, 1.2, 1.5];
 
 export function FloatingCards() {
   return (
     <>
-      {FLOATING_CARDS.map((card, i) => {
-        const Icon = iconMap[card.icon as keyof typeof iconMap];
+      {STATS.map((stat, i) => {
+        const Icon = iconMap[stat.icon as keyof typeof iconMap];
         return (
           <motion.div
-            key={card.label}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6 + i * 0.2, duration: 0.6 }}
+            key={stat.label}
+            initial={{ opacity: 0, x: i === 1 ? -30 : 30, y: 20 }}
+            animate={{ opacity: 1, x: 0, y: 0 }}
+            transition={{
+              delay: delays[i],
+              duration: 0.7,
+              ease: [0.25, 0.1, 0.25, 1] as const,
+            }}
             className={cn(
-              "absolute hidden lg:flex items-center gap-3 rounded-2xl bg-white/90 backdrop-blur-md px-4 py-3 shadow-lg",
-              positionStyles[card.position as keyof typeof positionStyles]
+              "absolute z-30 hidden rounded-2xl border border-white/20 bg-white/80 px-5 py-4 shadow-xl shadow-black/5 backdrop-blur-xl lg:flex lg:flex-col",
+              positions[i]
             )}
           >
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
-              <Icon className="h-5 w-5" />
+            <div className="flex items-center gap-3">
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10">
+                <Icon className="h-5 w-5 text-primary" />
+              </div>
+              <div>
+                <p className="text-xl font-bold leading-none text-gray-900">
+                  {stat.value}
+                </p>
+                <p className="mt-1 text-xs font-medium text-gray-500">
+                  {stat.label}
+                </p>
+              </div>
             </div>
-            <div>
-              <p className="text-xs text-muted-foreground">{card.label}</p>
-              <p className="text-sm font-semibold">{card.value}</p>
-            </div>
+            <p className="mt-1.5 text-[11px] font-medium text-gray-400">
+              {stat.sublabel}
+            </p>
           </motion.div>
         );
       })}

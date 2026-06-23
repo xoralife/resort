@@ -1,37 +1,45 @@
-export const HERO_CONTENT = {
+export const HERO = {
+  tagline: "Luxury Resort Collection",
   title: "Escape to",
-  titleHighlight: "Paradise",
+  highlight: "Paradise",
   subtitle:
-    "Experience unparalleled luxury at our world-class resort destinations. Your dream vacation begins here.",
-  primaryCta: "Explore Resorts",
-  secondaryCta: "Watch Video",
-};
+    "Immerse yourself in breathtaking landscapes, world-class amenities, and unforgettable experiences crafted for the discerning traveler.",
+  cta: {
+    primary: "Explore Resorts",
+    secondary: "Watch Film",
+  },
+} as const;
 
-export const FLOATING_CARDS = [
+export const SEARCH_FIELDS = {
+  destinations: [
+    { value: "maldives", label: "Maldives" },
+    { value: "bali", label: "Bali, Indonesia" },
+    { value: "santorini", label: "Santorini, Greece" },
+    { value: "bora-bora", label: "Bora Bora, French Polynesia" },
+    { value: "dubai", label: "Dubai, UAE" },
+    { value: "maui", label: "Maui, Hawaii" },
+    { value: "amalfi", label: "Amalfi Coast, Italy" },
+  ],
+  guests: [1, 2, 3, 4, 5, 6, 7, 8],
+} as const;
+
+export const STATS = [
   {
-    label: "5-Star Luxury",
-    value: "Award-Winning",
+    value: "4.9",
+    label: "Average Rating",
+    sublabel: "2,500+ reviews",
     icon: "star",
-    position: "top-right",
   },
   {
-    label: "Best Rate",
-    value: "20% OFF",
-    icon: "discount",
-    position: "bottom-left",
+    value: "20%",
+    label: "Best Rate Guarantee",
+    sublabel: "Book direct & save",
+    icon: "shield",
   },
   {
-    label: "Happy Guests",
-    value: "2,500+",
-    icon: "users",
-    position: "bottom-right",
+    value: "150+",
+    label: "Luxury Resorts",
+    sublabel: "Worldwide destinations",
+    icon: "building",
   },
-] as const;
-
-export const DESTINATIONS = [
-  { value: "maldives", label: "Maldives" },
-  { value: "bali", label: "Bali, Indonesia" },
-  { value: "santorini", label: "Santorini, Greece" },
-  { value: "maui", label: "Maui, Hawaii" },
-  { value: "dubai", label: "Dubai, UAE" },
 ] as const;
