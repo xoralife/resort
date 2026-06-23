@@ -9,16 +9,16 @@ const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.15, delayChildren: 0.2 },
+    transition: { staggerChildren: 0.12, delayChildren: 0.2 },
   },
 };
 
 const childVariants = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.7, ease: [0.25, 0.1, 0.25, 1] as const },
+    transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] as const },
   },
 };
 
@@ -28,52 +28,45 @@ export function HeroContent() {
       variants={containerVariants}
       initial="hidden"
       animate="visible"
-      className="relative z-20 mx-auto max-w-5xl px-4 pt-32 text-center sm:pt-36 md:pt-44"
+      className="relative z-20 mx-auto max-w-5xl px-4 pt-28 text-center sm:pt-32 md:pt-40"
     >
       <motion.div variants={childVariants}>
-        <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-5 py-1.5 text-xs font-medium tracking-[0.2em] text-white/90 backdrop-blur-md uppercase">
-          <span className="inline-block h-1.5 w-1.5 rounded-full bg-accent" />
+        <span className="inline-block rounded-full border border-gray-200 bg-white/70 px-4 py-1 text-xs font-medium text-gray-500 tracking-wider uppercase backdrop-blur-sm">
           {HERO.tagline}
-        </div>
+        </span>
       </motion.div>
 
       <motion.h1
         variants={childVariants}
-        className="font-[family-name:var(--font-playfair)] text-5xl leading-[1.1] tracking-tight text-white sm:text-6xl md:text-7xl lg:text-8xl"
+        className="mt-6 font-[family-name:var(--font-serif)] text-5xl leading-[1.1] tracking-tight text-gray-900 sm:text-6xl md:text-7xl lg:text-8xl"
       >
         {HERO.title}{" "}
-        <span className="bg-gradient-to-r from-accent to-amber-400 bg-clip-text text-transparent">
-          {HERO.highlight}
-        </span>
+        <span className="text-primary">{HERO.highlight}</span>
       </motion.h1>
 
       <motion.p
         variants={childVariants}
-        className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/70 sm:text-lg md:text-xl"
+        className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-gray-500 sm:text-lg"
       >
         {HERO.subtitle}
       </motion.p>
 
       <motion.div
         variants={childVariants}
-        className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
+        className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row"
       >
-        <Button
-          size="xl"
-          className="group relative overflow-hidden bg-primary px-8 py-6 text-base font-semibold text-white shadow-2xl shadow-primary/30 transition-all duration-300 hover:bg-primary-dark hover:shadow-primary/40"
-        >
-          <span className="relative z-10 flex items-center gap-2">
+        <Button className="px-7 py-5 text-sm font-semibold">
+          <span className="flex items-center gap-2">
             {HERO.cta.primary}
-            <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+            <ArrowRight className="h-4 w-4" />
           </span>
         </Button>
         <Button
           variant="outline"
-          size="xl"
-          className="group border-white/30 px-8 py-6 text-base font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:border-white/50 hover:bg-white/10"
+          className="border-gray-300 px-7 py-5 text-sm font-semibold text-gray-700 hover:bg-gray-50"
         >
           <span className="flex items-center gap-2">
-            <Play className="h-4 w-4 fill-white transition-transform duration-300 group-hover:scale-110" />
+            <Play className="h-4 w-4" />
             {HERO.cta.secondary}
           </span>
         </Button>

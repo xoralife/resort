@@ -12,23 +12,23 @@ export function SearchWidget() {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 40 }}
+      initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.6, duration: 0.7, ease: [0.25, 0.1, 0.25, 1] as const }}
-      className="relative z-20 mx-auto mt-12 w-full max-w-5xl px-4"
+      transition={{ delay: 0.5, duration: 0.5, ease: [0.25, 0.1, 0.25, 1] as const }}
+      className="relative z-20 mx-auto mt-10 w-full max-w-4xl px-4"
     >
-      <div className="rounded-2xl border border-white/10 bg-white/[0.08] p-1.5 shadow-2xl shadow-black/20 backdrop-blur-2xl">
-        <div className="grid grid-cols-1 divide-y divide-white/10 rounded-xl bg-white/95 sm:grid-cols-5 sm:divide-x sm:divide-y-0">
-          <div className="relative col-span-1 flex items-center gap-3 px-5 py-4 sm:col-span-1">
-            <MapPin className="h-5 w-5 shrink-0 text-primary" />
+      <div className="rounded-xl border border-gray-200 bg-white shadow-sm">
+        <div className="grid grid-cols-1 divide-y divide-gray-100 sm:grid-cols-5 sm:divide-x sm:divide-y-0">
+          <div className="flex items-center gap-3 px-4 py-3.5 sm:col-span-1">
+            <MapPin className="h-4 w-4 shrink-0 text-gray-400" />
             <div className="min-w-0 flex-1">
-              <label className="block text-[11px] font-semibold tracking-wider text-gray-500 uppercase">
+              <label className="block text-xs font-medium text-gray-500">
                 Destination
               </label>
               <select
                 value={destination}
                 onChange={(e) => setDestination(e.target.value)}
-                className="mt-0.5 w-full appearance-none bg-transparent text-sm font-medium text-gray-900 outline-none"
+                className="mt-0.5 w-full appearance-none bg-transparent text-sm text-gray-900 outline-none"
               >
                 <option value="">Where to?</option>
                 {SEARCH_FIELDS.destinations.map((d) => (
@@ -40,42 +40,42 @@ export function SearchWidget() {
             </div>
           </div>
 
-          <div className="flex items-center gap-3 px-5 py-4">
-            <CalendarDays className="h-5 w-5 shrink-0 text-primary" />
+          <div className="flex items-center gap-3 px-4 py-3.5">
+            <CalendarDays className="h-4 w-4 shrink-0 text-gray-400" />
             <div className="min-w-0 flex-1">
-              <label className="block text-[11px] font-semibold tracking-wider text-gray-500 uppercase">
+              <label className="block text-xs font-medium text-gray-500">
                 Check In
               </label>
               <input
                 type="date"
-                className="mt-0.5 w-full bg-transparent text-sm font-medium text-gray-900 outline-none [color-scheme:light]"
+                className="mt-0.5 w-full bg-transparent text-sm text-gray-900 outline-none [color-scheme:light]"
               />
             </div>
           </div>
 
-          <div className="flex items-center gap-3 px-5 py-4">
-            <CalendarDays className="h-5 w-5 shrink-0 text-primary" />
+          <div className="flex items-center gap-3 px-4 py-3.5">
+            <CalendarDays className="h-4 w-4 shrink-0 text-gray-400" />
             <div className="min-w-0 flex-1">
-              <label className="block text-[11px] font-semibold tracking-wider text-gray-500 uppercase">
+              <label className="block text-xs font-medium text-gray-500">
                 Check Out
               </label>
               <input
                 type="date"
-                className="mt-0.5 w-full bg-transparent text-sm font-medium text-gray-900 outline-none [color-scheme:light]"
+                className="mt-0.5 w-full bg-transparent text-sm text-gray-900 outline-none [color-scheme:light]"
               />
             </div>
           </div>
 
-          <div className="flex items-center gap-3 px-5 py-4">
-            <Users className="h-5 w-5 shrink-0 text-primary" />
+          <div className="flex items-center gap-3 px-4 py-3.5">
+            <Users className="h-4 w-4 shrink-0 text-gray-400" />
             <div className="min-w-0 flex-1">
-              <label className="block text-[11px] font-semibold tracking-wider text-gray-500 uppercase">
+              <label className="block text-xs font-medium text-gray-500">
                 Guests
               </label>
               <select
                 value={guests}
                 onChange={(e) => setGuests(e.target.value)}
-                className="mt-0.5 w-full appearance-none bg-transparent text-sm font-medium text-gray-900 outline-none"
+                className="mt-0.5 w-full appearance-none bg-transparent text-sm text-gray-900 outline-none"
               >
                 {SEARCH_FIELDS.guests.map((n) => (
                   <option key={n} value={n}>
@@ -87,9 +87,9 @@ export function SearchWidget() {
           </div>
 
           <div className="flex items-center p-2">
-            <Button className="w-full gap-2 py-6 text-sm font-semibold shadow-lg sm:py-5">
+            <Button className="w-full gap-2 py-4 text-sm font-medium sm:py-3.5">
               <Search className="h-4 w-4" />
-              <span className="sm:hidden lg:inline">Search</span>
+              <span className="sm:sr-only lg:not-sr-only">Search</span>
             </Button>
           </div>
         </div>
