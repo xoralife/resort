@@ -55,21 +55,25 @@ export function HeroContent() {
         variants={childVariants}
         className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row"
       >
-        <Button className="px-7 py-5 text-sm font-semibold">
-          <span className="flex items-center gap-2">
-            {HERO.cta.primary}
-            <ArrowRight className="h-4 w-4" />
-          </span>
-        </Button>
-        <Button
-          variant="outline"
-          className="border-gray-300 px-7 py-5 text-sm font-semibold text-gray-700 hover:bg-gray-50"
-        >
-          <span className="flex items-center gap-2">
-            <Play className="h-4 w-4" />
-            {HERO.cta.secondary}
-          </span>
-        </Button>
+        <a href="#featured">
+          <Button className="px-7 py-5 text-sm font-semibold">
+            <span className="flex items-center gap-2">
+              {HERO.cta.primary}
+              <ArrowRight className="h-4 w-4" />
+            </span>
+          </Button>
+        </a>
+        <a href="#">
+          <Button
+            variant="outline"
+            className="border-gray-300 px-7 py-5 text-sm font-semibold text-gray-700 hover:bg-gray-50"
+          >
+            <span className="flex items-center gap-2">
+              <Play className="h-4 w-4" />
+              {HERO.cta.secondary}
+            </span>
+          </Button>
+        </a>
       </motion.div>
     </motion.div>
   );

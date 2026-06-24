@@ -59,12 +59,16 @@ export function Header() {
         </nav>
 
         <div className="hidden items-center gap-2 md:flex">
-          <Button variant="ghost" size="sm" className="text-sm text-gray-600">
-            Sign In
-          </Button>
-          <Button size="sm" className="px-4 text-sm">
-            Book Now
-          </Button>
+          <a href="/auth/login">
+            <Button variant="ghost" size="sm" className="text-sm text-gray-600">
+              Sign In
+            </Button>
+          </a>
+          <a href="#search">
+            <Button size="sm" className="px-4 text-sm">
+              Book Now
+            </Button>
+          </a>
         </div>
 
         <button
@@ -95,12 +99,16 @@ export function Header() {
                 </a>
               ))}
               <div className="mt-4 flex gap-3 px-4">
-                <Button variant="outline" size="sm" className="flex-1">
-                  Sign In
-                </Button>
-                <Button size="sm" className="flex-1">
-                  Book Now
-                </Button>
+                <a href="/auth/login" className="flex-1">
+                  <Button variant="outline" size="sm" className="w-full">
+                    Sign In
+                  </Button>
+                </a>
+                <a href="#search" className="flex-1">
+                  <Button size="sm" className="w-full">
+                    Book Now
+                  </Button>
+                </a>
               </div>
             </nav>
           </motion.div>
