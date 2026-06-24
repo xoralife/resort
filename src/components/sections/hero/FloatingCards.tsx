@@ -35,18 +35,18 @@ export function FloatingCards() {
               ease: [0.25, 0.1, 0.25, 1] as const,
             }}
             className={cn(
-              "absolute z-30 hidden rounded-lg border border-gray-200 bg-white px-4 py-3 shadow-sm lg:flex lg:items-center lg:gap-3",
+              "absolute z-30 hidden rounded-lg border border-gray-200 bg-white px-4 py-3 shadow-sm lg:flex lg:items-center lg:gap-3 dark:border-gray-700 dark:bg-dark",
               positions[i]
             )}
           >
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary-light">
-              <Icon className="h-4 w-4 text-primary" />
+            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary-light dark:bg-primary-dark">
+              <Icon className="h-4 w-4 text-primary dark:text-primary-light" />
             </div>
             <div>
-              <p className="text-base font-semibold text-gray-900">
+              <p className="text-base font-semibold text-gray-900 dark:text-white">
                 {stat.value}
               </p>
-              <p className="text-xs text-gray-500">{stat.label}</p>
+              <p className="text-xs text-gray-500 dark:text-gray-400">{stat.label}</p>
             </div>
           </motion.div>
         );

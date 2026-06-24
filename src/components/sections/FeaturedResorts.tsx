@@ -8,7 +8,7 @@ import { FEATURED_RESORTS } from "@/data/resorts";
 
 export function FeaturedResorts() {
   return (
-    <section id="featured" className="bg-white py-20 sm:py-28">
+    <section id="featured" className="bg-white py-20 dark:bg-dark sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -17,10 +17,10 @@ export function FeaturedResorts() {
           transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] as const }}
           className="mx-auto max-w-xl text-center"
         >
-          <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white sm:text-4xl">
             Featured Resorts
           </h2>
-          <p className="mt-3 text-base text-gray-500">
+          <p className="mt-3 text-base text-gray-500 dark:text-gray-400">
             Hand-picked escapes for the discerning traveler.
           </p>
         </motion.div>
@@ -38,7 +38,7 @@ export function FeaturedResorts() {
           transition={{ delay: 0.2, duration: 0.4 }}
           className="mt-10 text-center"
         >
-          <Button variant="outline" className="gap-2 px-6 text-sm">
+          <Button variant="outline" className="gap-2 px-6 text-sm dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-800">
             View All Resorts
             <ArrowRight className="h-4 w-4" />
           </Button>

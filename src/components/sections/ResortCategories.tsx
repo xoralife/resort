@@ -6,7 +6,7 @@ import { CATEGORIES } from "@/data/categories";
 
 export function ResortCategories() {
   return (
-    <section className="border-t border-gray-100 bg-white py-20 sm:py-28">
+    <section className="border-t border-gray-100 bg-white py-20 dark:border-gray-800 dark:bg-dark sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -15,10 +15,10 @@ export function ResortCategories() {
           transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] as const }}
           className="mx-auto max-w-xl text-center"
         >
-          <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white sm:text-4xl">
             Browse by Style
           </h2>
-          <p className="mt-3 text-base text-gray-500">
+          <p className="mt-3 text-base text-gray-500 dark:text-gray-400">
             From beachfront villas to mountain retreats, find your perfect escape.
           </p>
         </motion.div>
@@ -43,9 +43,7 @@ export function ResortCategories() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
               <div className="relative z-10 w-full p-5">
-                <h3 className="text-lg font-semibold text-white">
-                  {cat.title}
-                </h3>
+                <h3 className="text-lg font-semibold text-white">{cat.title}</h3>
                 <p className="mt-0.5 text-sm text-white/70">{cat.description}</p>
               </div>
             </motion.a>

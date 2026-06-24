@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --color-primary: #0F766E;
   --color-primary-dark: #0B5E56;
@@ -7,7 +9,6 @@
   --color-accent: #F59E0B;
   --color-accent-dark: #D97706;
   --color-background: #FFFFFF;
-  --color-dark: #0F172A;
   --color-foreground: #0F172A;
   --color-muted: #6B7280;
   --color-muted-light: #9CA3AF;
@@ -36,6 +37,20 @@
   body {
     @apply bg-background text-foreground antialiased;
     font-family: var(--font-sans);
+  }
+
+  :root {
+    --bg-hero-overlay: rgba(255, 255, 255, 0.6);
+    --bg-hero-overlay-2: rgba(255, 255, 255, 0.3);
+    --bg-hero-overlay-3: rgba(255, 255, 255, 0.9);
+    --bg-card-hover: rgba(0, 0, 0, 0.02);
+  }
+
+  .dark {
+    --bg-hero-overlay: rgba(15, 23, 42, 0.7);
+    --bg-hero-overlay-2: rgba(15, 23, 42, 0.4);
+    --bg-hero-overlay-3: rgba(15, 23, 42, 0.9);
+    --bg-card-hover: rgba(255, 255, 255, 0.03);
   }
 }
 

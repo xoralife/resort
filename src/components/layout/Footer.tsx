@@ -21,7 +21,7 @@ const footerLinks = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-gray-100 bg-white">
+    <footer className="border-t border-gray-100 bg-white dark:border-gray-800 dark:bg-dark">
       <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8 lg:py-16">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-5">
           <div className="lg:col-span-1">
@@ -29,22 +29,22 @@ export function Footer() {
               <div className="flex h-7 w-7 items-center justify-center rounded-md bg-primary">
                 <span className="text-xs font-bold text-white">R</span>
               </div>
-              <span className="text-sm font-semibold text-gray-900">Resort</span>
+              <span className="text-sm font-semibold text-gray-900 dark:text-white">Resort</span>
             </div>
-            <p className="mt-3 text-sm leading-relaxed text-gray-500">
+            <p className="mt-3 text-sm leading-relaxed text-gray-500 dark:text-gray-400">
               Luxury hospitality across the world&apos;s most breathtaking destinations.
             </p>
             <div className="mt-5 space-y-2">
-              <div className="flex items-center gap-2 text-sm text-gray-500">
-                <MapPin className="h-4 w-4 shrink-0 text-gray-400" />
+              <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
+                <MapPin className="h-4 w-4 shrink-0 text-gray-400 dark:text-gray-500" />
                 1 Luxury Ave, Beverly Hills, CA
               </div>
-              <div className="flex items-center gap-2 text-sm text-gray-500">
-                <Phone className="h-4 w-4 shrink-0 text-gray-400" />
+              <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
+                <Phone className="h-4 w-4 shrink-0 text-gray-400 dark:text-gray-500" />
                 +1 (800) 555-LUXE
               </div>
-              <div className="flex items-center gap-2 text-sm text-gray-500">
-                <Mail className="h-4 w-4 shrink-0 text-gray-400" />
+              <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
+                <Mail className="h-4 w-4 shrink-0 text-gray-400 dark:text-gray-500" />
                 concierge@luxuryresort.com
               </div>
             </div>
@@ -52,7 +52,7 @@ export function Footer() {
 
           {footerLinks.map((group) => (
             <div key={group.title}>
-              <h4 className="text-xs font-semibold tracking-wider text-gray-500 uppercase">
+              <h4 className="text-xs font-semibold tracking-wider text-gray-500 dark:text-gray-400 uppercase">
                 {group.title}
               </h4>
               <ul className="mt-3 space-y-2.5">
@@ -60,7 +60,7 @@ export function Footer() {
                   <li key={link}>
                     <a
                       href="#"
-                      className="text-sm text-gray-500 transition-colors hover:text-gray-900"
+                      className="text-sm text-gray-500 transition-colors hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
                     >
                       {link}
                     </a>
@@ -71,8 +71,8 @@ export function Footer() {
           ))}
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-gray-100 pt-6 text-center sm:flex-row sm:text-left">
-          <p className="text-xs text-gray-400">
+        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-gray-100 pt-6 text-center sm:flex-row sm:text-left dark:border-gray-800">
+          <p className="text-xs text-gray-400 dark:text-gray-500">
             &copy; {new Date().getFullYear()} Luxury Resort. All rights reserved.
           </p>
           <div className="flex gap-5">
@@ -80,7 +80,7 @@ export function Footer() {
               <a
                 key={s}
                 href="#"
-                className="text-xs text-gray-400 transition-colors hover:text-gray-900"
+                className="text-xs text-gray-400 transition-colors hover:text-gray-900 dark:text-gray-500 dark:hover:text-white"
               >
                 {s}
               </a>

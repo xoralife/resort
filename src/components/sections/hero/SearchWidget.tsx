@@ -18,18 +18,18 @@ export function SearchWidget() {
       transition={{ delay: 0.5, duration: 0.5, ease: [0.25, 0.1, 0.25, 1] as const }}
       className="relative z-20 mx-auto mt-10 w-full max-w-4xl px-4"
     >
-      <div className="rounded-xl border border-gray-200 bg-white shadow-sm">
-        <div className="grid grid-cols-1 divide-y divide-gray-100 sm:grid-cols-5 sm:divide-x sm:divide-y-0">
+      <div className="rounded-xl border border-gray-200 bg-white shadow-sm dark:border-gray-700 dark:bg-dark">
+        <div className="grid grid-cols-1 divide-y divide-gray-100 sm:grid-cols-5 sm:divide-x sm:divide-y-0 dark:divide-gray-800">
           <div className="flex items-center gap-3 px-4 py-3.5 sm:col-span-1">
-            <MapPin className="h-4 w-4 shrink-0 text-gray-400" />
+            <MapPin className="h-4 w-4 shrink-0 text-gray-400 dark:text-gray-500" />
             <div className="min-w-0 flex-1">
-              <label className="block text-xs font-medium text-gray-500">
+              <label className="block text-xs font-medium text-gray-500 dark:text-gray-400">
                 Destination
               </label>
               <select
                 value={destination}
                 onChange={(e) => setDestination(e.target.value)}
-                className="mt-0.5 w-full appearance-none bg-transparent text-sm text-gray-900 outline-none"
+                className="mt-0.5 w-full appearance-none bg-transparent text-sm text-gray-900 outline-none dark:text-gray-100"
               >
                 <option value="">Where to?</option>
                 {SEARCH_FIELDS.destinations.map((d) => (
@@ -42,41 +42,41 @@ export function SearchWidget() {
           </div>
 
           <div className="flex items-center gap-3 px-4 py-3.5">
-            <CalendarDays className="h-4 w-4 shrink-0 text-gray-400" />
+            <CalendarDays className="h-4 w-4 shrink-0 text-gray-400 dark:text-gray-500" />
             <div className="min-w-0 flex-1">
-              <label className="block text-xs font-medium text-gray-500">
+              <label className="block text-xs font-medium text-gray-500 dark:text-gray-400">
                 Check In
               </label>
               <input
                 type="date"
-                className="mt-0.5 w-full bg-transparent text-sm text-gray-900 outline-none [color-scheme:light]"
+                className="mt-0.5 w-full bg-transparent text-sm text-gray-900 outline-none dark:text-gray-100 [color-scheme:light] dark:[color-scheme:dark]"
               />
             </div>
           </div>
 
           <div className="flex items-center gap-3 px-4 py-3.5">
-            <CalendarDays className="h-4 w-4 shrink-0 text-gray-400" />
+            <CalendarDays className="h-4 w-4 shrink-0 text-gray-400 dark:text-gray-500" />
             <div className="min-w-0 flex-1">
-              <label className="block text-xs font-medium text-gray-500">
+              <label className="block text-xs font-medium text-gray-500 dark:text-gray-400">
                 Check Out
               </label>
               <input
                 type="date"
-                className="mt-0.5 w-full bg-transparent text-sm text-gray-900 outline-none [color-scheme:light]"
+                className="mt-0.5 w-full bg-transparent text-sm text-gray-900 outline-none dark:text-gray-100 [color-scheme:light] dark:[color-scheme:dark]"
               />
             </div>
           </div>
 
           <div className="flex items-center gap-3 px-4 py-3.5">
-            <Users className="h-4 w-4 shrink-0 text-gray-400" />
+            <Users className="h-4 w-4 shrink-0 text-gray-400 dark:text-gray-500" />
             <div className="min-w-0 flex-1">
-              <label className="block text-xs font-medium text-gray-500">
+              <label className="block text-xs font-medium text-gray-500 dark:text-gray-400">
                 Guests
               </label>
               <select
                 value={guests}
                 onChange={(e) => setGuests(e.target.value)}
-                className="mt-0.5 w-full appearance-none bg-transparent text-sm text-gray-900 outline-none"
+                className="mt-0.5 w-full appearance-none bg-transparent text-sm text-gray-900 outline-none dark:text-gray-100"
               >
                 {SEARCH_FIELDS.guests.map((n) => (
                   <option key={n} value={n}>

@@ -8,7 +8,7 @@ import { EXPERIENCES } from "@/data/destinations";
 
 export function LuxuryExperiences() {
   return (
-    <section className="border-t border-gray-100 bg-white py-20 sm:py-28">
+    <section className="border-t border-gray-100 bg-white py-20 dark:border-gray-800 dark:bg-dark sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -17,10 +17,10 @@ export function LuxuryExperiences() {
           transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] as const }}
           className="mx-auto max-w-xl text-center"
         >
-          <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white sm:text-4xl">
             Curated Experiences
           </h2>
-          <p className="mt-3 text-base text-gray-500">
+          <p className="mt-3 text-base text-gray-500 dark:text-gray-400">
             Elevate your stay with moments designed to inspire.
           </p>
         </motion.div>
@@ -33,7 +33,7 @@ export function LuxuryExperiences() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-20px" }}
               transition={{ delay: i * 0.08, duration: 0.4, ease: [0.25, 0.1, 0.25, 1] as const }}
-              className="group flex flex-col overflow-hidden rounded-xl border border-gray-100 bg-white transition-shadow duration-300 hover:shadow-sm sm:flex-row"
+              className="group flex flex-col overflow-hidden rounded-xl border border-gray-100 bg-white transition-shadow duration-300 hover:shadow-sm dark:border-gray-800 dark:bg-dark/50 sm:flex-row"
             >
               <div className="relative h-48 w-full shrink-0 overflow-hidden sm:h-auto sm:w-64">
                 <Image
@@ -45,10 +45,10 @@ export function LuxuryExperiences() {
                 />
               </div>
               <div className="flex flex-1 flex-col justify-center p-5 sm:p-6">
-                <h3 className="text-lg font-semibold text-gray-900">
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
                   {exp.title}
                 </h3>
-                <p className="mt-1.5 text-sm leading-relaxed text-gray-500">
+                <p className="mt-1.5 text-sm leading-relaxed text-gray-500 dark:text-gray-400">
                   {exp.description}
                 </p>
                 <div className="mt-3">
@@ -69,7 +69,7 @@ export function LuxuryExperiences() {
           transition={{ delay: 0.2, duration: 0.4 }}
           className="mt-8 text-center"
         >
-          <Button variant="outline" className="gap-2 px-6 text-sm">
+          <Button variant="outline" className="gap-2 px-6 text-sm dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-800">
             View All Experiences
             <ArrowRight className="h-4 w-4" />
           </Button>

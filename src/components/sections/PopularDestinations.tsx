@@ -7,7 +7,7 @@ import { POPULAR_DESTINATIONS } from "@/data/destinations";
 
 export function PopularDestinations() {
   return (
-    <section className="border-t border-gray-100 bg-gray-50 py-20 sm:py-28">
+    <section className="border-t border-gray-100 bg-gray-50 py-20 dark:border-gray-800 dark:bg-dark/50 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -16,10 +16,10 @@ export function PopularDestinations() {
           transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] as const }}
           className="mx-auto max-w-xl text-center"
         >
-          <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white sm:text-4xl">
             Popular Destinations
           </h2>
-          <p className="mt-3 text-base text-gray-500">
+          <p className="mt-3 text-base text-gray-500 dark:text-gray-400">
             The world&apos;s most coveted destinations, waiting for you.
           </p>
         </motion.div>
@@ -50,12 +50,8 @@ export function PopularDestinations() {
                   <Star className="h-3.5 w-3.5 fill-white/90 text-white/90" />
                   <span className="text-sm font-medium text-white">{dest.rating}</span>
                 </div>
-                <h3 className="mt-0.5 text-lg font-semibold text-white">
-                  {dest.name}
-                </h3>
-                <p className="text-sm text-white/70">
-                  {dest.resortCount} resorts
-                </p>
+                <h3 className="mt-0.5 text-lg font-semibold text-white">{dest.name}</h3>
+                <p className="text-sm text-white/70">{dest.resortCount} resorts</p>
               </div>
             </motion.a>
           ))}
