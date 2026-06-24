@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Header } from "@/components/layout/Header";
 import { HeroContent } from "./hero/HeroContent";
@@ -10,10 +11,13 @@ export function HeroSection() {
   return (
     <section className="relative min-h-screen overflow-hidden">
       <div className="absolute inset-0">
-        <img
-          src="/images/hero-bg.jpg"
+        <Image
+          src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd?w=1920&q=90"
           alt=""
-          className="h-full w-full object-cover"
+          fill
+          className="object-cover"
+          priority
+          sizes="100vw"
         />
       </div>
 
